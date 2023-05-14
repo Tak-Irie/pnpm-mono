@@ -1,0 +1,19 @@
+{
+  "name": "astro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^2.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
