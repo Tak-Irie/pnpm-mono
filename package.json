@@ -2,17 +2,18 @@
   "name": "pnpm-play",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "packageManager": "pnpm@8.3.0",
   "engines": {
     "pnpm": ">=8.3.0",
     "npm": "use pnpm",
     "yarn": "use pnpm"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
   }
 }
