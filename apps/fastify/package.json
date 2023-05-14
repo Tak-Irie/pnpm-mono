@@ -5,12 +5,12 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "ts-node-dev": "ts-node-dev --respawn src/index.ts",
+    "local": "ts-node-dev --respawn src/index.ts",
     "build": "tsc ./src/index.ts --outDir ./dist --declaration"
   },
   "dependencies": {
     "fastify": "^4.17.0",
-    "domain": "workspace:*"
+    "hoge-domain": "workspace:*"
   },
   "devDependencies": {
     "ts-node-dev": "^2.0.0",
