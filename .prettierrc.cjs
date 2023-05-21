@@ -1,5 +1,8 @@
-// VSCodeかつpnpmを利用している際に、prettierが.astroを認識できるようにする
 module.exports = {
+  trailingComma: "es5",
+  tabWidth: 4,
+  semi: false,
+  singleQuote: true,
   plugins: [require.resolve("prettier-plugin-astro")],
   overrides: [
     {

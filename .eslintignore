@@ -3,11 +3,16 @@ apps/*/docs
 apps/*/coverage
 apps/*/__tests__/src
 apps/*/__tests__/dist
+apps/*/dist
 
-libs/*/dist
 libs/*/docs
 libs/*/coverage
 libs/*/__tests__/src
 libs/*/__tests__/dist
 
-*.md
+jest.config.cjs
+.prettierrc.cjs
+!.*.js
+!.*.cjs
+!.*.mjs
+!.*.ts

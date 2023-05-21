@@ -4,7 +4,8 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc ./src/index.ts --outDir ./dist --declaration"
+    "build": "tsc ./src/index.ts --outDir ./dist --declaration",
+    "type-check": "tsc --noEmit -p ."
   },
   "keywords": [],
   "author": "",
