@@ -104,10 +104,12 @@ export class AstroStack extends Stack {
                 provider.openIdConnectProviderArn,
                 {
                     StringEquals: {
-                        ['token.actions.githubusercontent.com:aud']:
+                        'token.actions.githubusercontent.com:aud':
                             'sts.amazonaws.com',
-                        ['token.actions.githubusercontent.com:sub']:
-                            'repo:Tak-Irie/pnpm-mono',
+                    },
+                    StringLike: {
+                        'token.actions.githubusercontent.com:sub':
+                            'repo:Tak-Irie/pnpm-mono:*',
                     },
                 }
             ),
