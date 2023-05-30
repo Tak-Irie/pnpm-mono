@@ -126,8 +126,8 @@ export class AstroStack extends Stack {
                 ],
                 resources: [
                     `arn:aws:cloudfront::${accountId}:distribution/${distribution.distributionId}`,
-                    `arn:aws:s3:::${bucketName}/*`,
-                    `arn:aws:s3:::${bucketName}`,
+                    `arn:aws:s3:::${astroBucket.bucketName}/*`,
+                    `arn:aws:s3:::${astroBucket.bucketName}`,
                 ],
             })
         )
