@@ -1,0 +1,41 @@
+name: Deploy Website to S3
+
+on:
+    push:
+        branches:
+            - main
+
+env:
+    AWS_REGION: ap-northeast-1 # set this to your preferred AWS region, e.g. us-west-1
+    AWS_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:GitHubActionsDeployRole
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        permissions:
+            id-token: write
+            contents: read
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: setup node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+            - name: setup pnpm
+              uses: pnpm/action-setup@v2.2.2
+              with:
+                  version: 8.3.0
+            - name: Configure AWS credentials from IAM Role
+              uses: aws-actions/configure-aws-credentials@v1
+              with:
+                  role-to-assume: ${{ env.AWS_ROLE_ARN }}
+                  aws-region: ${{ env.AWS_REGION }}
+            - name: Install modules
+              run: pnpm install
+            - name: Build application
+              run: pnpm build
+            - name: Deploy to S3
+              run: aws s3 sync ./apps/astro/dist s3://${{ secrets.BUCKET_NAME }}
+            - name: Create CloudFront invalidation
+              run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"

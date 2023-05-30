@@ -17,6 +17,15 @@
     ]
   },
   "context": {
+    "env": "dev",
+    "dev": {
+      "s3": {
+        "bucketName": "dev-astro"
+      },
+      "aws":{
+        "accountId": "354221491810"
+      }
+    },
     "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
     "@aws-cdk/core:checkSecretUsage": true,
     "@aws-cdk/core:target-partitions": [
